@@ -1,30 +1,21 @@
-# Magisk Module Template
-
-This `README.md` will be shown in Magisk Manager. Place any information / changelog / notes you like.
-
-**Please update `README.md` if you want to submit your module to the online repo!**
-
-Github has its own online markdown editor with a preview feature, you can use it to update your `README.md`! If you need more advanced syntax, check the [Markdown Cheat Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
-
-For more information about modules and repos, please check the [official documentations](https://github.com/topjohnwu/Magisk/blob/master/docs/modules.md)
-
----
-# **Module Name**
+# **resolv.conf for Android**
 ## Description
-Description here
-## Changelog
-Changelog here
-## Requirements
-- Requirement 1
-- Requirement *
-- Requirement n
-## Instructions
-Instructions here
-- Or other instructions here
-- Followed by more instructions
-1. Or a list of instructions
-2. With more instructions
-## Links
-[Module XDA Forum Thread](https://forum.xda-developers.com/apps/magisk/module-url-here "Module official XDA thread")
+Have you ever run Go applications in your Android terminal, only to find there is no DNS available for the app? The issue turns out that the Go app will check /etc/resolv.conf for DNS querie. Unfortunatly on most devices /etc/resolv.conf is missing.
 
+This module simple puts resolv.conf to your /system/etc and does nothing more.
+
+Here is what the resolv.conf contains:
+```
+nameserver 1.0.0.1
+nameserver 80.80.80.80
+nameserver 223.5.5.5
+```
+## Changelog
+v1 Initial release
+## Requirements
+No requirements known yet
+## Instructions
+1. Clone this repo and zip it. Make sure the META-INF directory is at the root of your zipped archive.
+2. Flash it via Magisk Manager.
+## Links
 [Latest stable Magisk](http://www.tiny.cc/latestmagisk)
